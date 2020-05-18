@@ -22,6 +22,7 @@ require 'screen-object/load_appium'
 require 'screen-object/accessors'
 require 'screen-object/elements'
 require 'screen-object/screen_factory'
+require 'screen-object/screen-populator'
 require 'screen-object/accessors/element'
 
 # this module adds screen object when included.
