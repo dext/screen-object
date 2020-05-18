@@ -1,4 +1,6 @@
-module ScreenPopulator
+module ScreenObject
+
+  module ScreenPopulator
 
     #
     # This method will populate all matched page TextFields,
