@@ -30,6 +30,8 @@ require 'screen-object/accessors/element'
 
 module ScreenObject
 
+  include PagePopulator
+  
   def self.included(cls)
     cls.extend ScreenObject::Accessors
   end
