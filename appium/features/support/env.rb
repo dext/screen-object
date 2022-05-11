@@ -1,6 +1,5 @@
 require 'rspec'
 require 'appium_lib'
-require 'cucumber/ast'
 require 'require_all'
 require 'screen-object'
 
