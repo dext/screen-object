@@ -20,7 +20,7 @@ module ScreenObject
       attr_reader :locator
 
       def initialize(locator)
-        @locator=locator.split("~")
+        @locator=locator.split "~"
       end
 
       def driver
@@ -44,11 +44,11 @@ module ScreenObject
       end
 
       def element
-        driver.find_element(:"#{locator[0]}",locator[1])
+        driver.find_element :"#{locator[0]}",locator[1]
       end
 
       def elements
-        driver.find_elements(:"#{locator[0]}",locator[1])
+        driver.find_elements :"#{locator[0]}",locator[1]
       end
 
       def element_attributes
@@ -58,9 +58,9 @@ module ScreenObject
       def dynamic_xpath(text)
         concat_attribute=[]
         element_attributes.each{|i| concat_attribute << %Q(contains(@#{i}, '#{text}'))}
-        puts  "//#{locator[0]}[#{concat_attribute.join(' or ')}]"
-        locator1="xpath~//#{locator[0]}[#{concat_attribute.join(' or ')}]"
-        @locator=locator1.split("~")
+        puts  "//#{locator[0]}[#{concat_attribute.join ' or '}]"
+        locator1="xpath~//#{locator[0]}[#{concat_attribute.join ' or '}]"
+        @locator=locator1.split "~"
         element
       end
 
@@ -78,11 +78,11 @@ module ScreenObject
       end
 
       def scroll_to_text(text)
-        $driver.scroll_to(text)
+        $driver.scroll_to text
       end
 
       def scroll_to_exact_text(text)
-        $driver.scroll_to_exact(text)
+        $driver.scroll_to_exact text
       end
 
       def scroll_for_element_click
@@ -107,16 +107,16 @@ module ScreenObject
         if exists?
           click
         else
-          scroll_to_text(text)
+          scroll_to_text text
           element.click
         end
       end
 
       def click_dynamic_text(text)
-        if dynamic_text_exists?(text)
+        if dynamic_text_exists? text
           element.click
         else
-          scroll_to_text(text)
+          scroll_to_text text
           element.click
         end
       end
@@ -125,16 +125,16 @@ module ScreenObject
         if exists?
           click
         else
-          scroll_to_exact_text(text)
+          scroll_to_exact_text text
           element.click
         end
       end
 
       def click_dynamic_exact_text(text)
-        if dynamic_text_exists?(text)
+        if dynamic_text_exists? text
           element.click
         else
-          scroll_to_exact_text(text)
+          scroll_to_exact_text text
           element.click
         end
       end
