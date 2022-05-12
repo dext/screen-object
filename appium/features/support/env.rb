@@ -23,7 +23,7 @@ World(ScreenObject::ScreenFactory)
 
 
 ScreenObject::ScreenFactory.routes = {
-    default: [[LandingScreen, :go_to_main_screen],
-              [MainScreen, :go_to_buttons_screen],
-              [ButtonsScreen, :title]]
+  default: [[LandingScreen, :go_to_main_screen],
+            [MainScreen, :go_to_buttons_screen],
+            [ButtonsScreen, :title]]
 }
