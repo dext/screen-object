@@ -28,11 +28,11 @@ module ScreenObject
       end
 
       def click
-          element.click
+        element.click
       end
 
       def value
-          element.value
+        element.value
       end
 
       def exists?
