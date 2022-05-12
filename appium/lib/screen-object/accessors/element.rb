@@ -44,11 +44,11 @@ module ScreenObject
       end
 
       def element
-        driver.find_element :"#{locator[0]}",locator[1]
+        driver.find_element :"#{locator[0]}", locator[1]
       end
 
       def elements
-        driver.find_elements :"#{locator[0]}",locator[1]
+        driver.find_elements :"#{locator[0]}", locator[1]
       end
 
       def element_attributes
@@ -73,7 +73,7 @@ module ScreenObject
       end
 
       def scroll
-        $driver.execute_script 'mobile: scrollTo',:element => element.ref
+        $driver.execute_script 'mobile: scrollTo', :element => element.ref
         # $driver.execute_script("mobile: scroll",:direction => direction.downcase, :element => element.ref)
       end
 
