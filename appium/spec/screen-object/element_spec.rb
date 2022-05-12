@@ -11,7 +11,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.click).to be true
     end
-
   end
 
   describe 'interaction with value method' do
@@ -20,7 +19,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:value).and_return('value')
       expect(element.value).to eql ('value')
     end
-
   end
 
   describe 'interaction with exists? method' do
@@ -29,7 +27,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:displayed?).and_return(true)
       expect(element.exists?).to eql (true)
     end
-
   end
 
   describe 'interaction with element method' do
@@ -38,7 +35,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:find_element).and_return(selenium_driver)
       expect(element.element).to eql (selenium_driver)
     end
-
   end
 
   describe 'interaction with element method' do
@@ -47,7 +43,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:find_elements).and_return(selenium_driver)
       expect(element.elements).to eql (selenium_driver)
     end
-
   end
 
   describe 'interaction with element method' do
@@ -56,7 +51,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:displayed?).and_return(true)
       expect(element.dynamic_text_exists?('dynamic_text')).to eql (true)
     end
-
   end
 
    # describe "interaction with scroll method" do
@@ -75,7 +69,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.scroll_for_element_click).to eql (true)
     end
-
   end
 
   describe 'interaction with scroll_for_element_click method' do
@@ -87,7 +80,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.scroll_for_element_click).to eql (true)
     end
-
   end
 
   describe 'interaction with scroll_for_dynamic_element_click method' do
@@ -98,7 +90,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.scroll_for_dynamic_element_click('expected_text')).to eql (true)
     end
-
   end
 
   describe 'interaction with scroll_for_dynamic_element_click method' do
@@ -110,7 +101,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.scroll_for_dynamic_element_click('expected_text')).to eql (true)
     end
-
   end
 
   describe 'interaction with click_text method' do
@@ -119,7 +109,6 @@ describe 'Element' do
       expect(element).to receive(:click).and_return(true)
       expect(element.click_text('text')).to eq (true)
     end
-
   end
 
   describe 'interaction with click_text method' do
@@ -130,7 +119,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.click_text('text')).to eq (true)
     end
-
   end
 
   describe 'interaction with click_dynamic_text method' do
@@ -140,7 +128,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.click_dynamic_text('text')).to eq (true)
     end
-
   end
 
   describe 'interaction with click_dynamic_text method' do
@@ -151,7 +138,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.click_dynamic_text('text')).to eq (true)
     end
-
   end
 
 
@@ -161,7 +147,6 @@ describe 'Element' do
       expect(element).to receive(:click).and_return(true)
       expect(element.click_exact_text('text')).to eq (true)
     end
-
   end
 
   describe 'interaction with click_exact_text method' do
@@ -181,7 +166,6 @@ describe 'Element' do
       expect(selenium_driver).to receive(:click).and_return(true)
       expect(element.click_dynamic_exact_text('text')).to eq (true)
     end
-
   end
 
   describe 'interaction with click_exact_text method' do
