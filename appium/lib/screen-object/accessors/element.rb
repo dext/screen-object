@@ -52,7 +52,7 @@ module ScreenObject
       end
 
       def element_attributes
-        %w[name resource-id value text]
+        %w(name resource-id value text)
       end
 
       def dynamic_xpath(text)
