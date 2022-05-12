@@ -55,7 +55,7 @@ module ScreenObject
 
       def dynamic_xpath(text)
         concat_attribute = []
-        element_attributes.each { |i| concat_attribute << %Q(contains(@#{i}, '#{text}')) }
+        element_attributes.each { |i| concat_attribute << %(contains(@#{i}, '#{text}')) }
         puts "//#{locator[0]}[#{concat_attribute.join ' or '}]"
         locator1 = "xpath~//#{locator[0]}[#{concat_attribute.join ' or '}]"
         @locator = locator1.split '~'
