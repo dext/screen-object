@@ -64,7 +64,7 @@ module ScreenObject
         element
       end
 
-      def dynamic_text_exists? dynamic_text
+      def dynamic_text_exists?(dynamic_text)
         begin
           dynamic_xpath(dynamic_text).displayed?
         rescue
