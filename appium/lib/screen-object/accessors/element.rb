@@ -94,7 +94,7 @@ module ScreenObject
         end
       end
 
-      def scroll_for_dynamic_element_click (expected_text)
+      def scroll_for_dynamic_element_click(expected_text)
         if dynamic_xpath(expected_text).displayed?
           element.click
         else
