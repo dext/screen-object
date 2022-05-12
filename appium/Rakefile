@@ -1,23 +1,14 @@
 require 'rubygems'
 require 'bundler'
-require 'cucumber'
-require 'cucumber/rake/task'
 require 'rspec/core/rake_task'
 
 Bundler::GemHelper.install_tasks
 
-
-# Rake::Task['release'].clear
-
-Cucumber::Rake::Task.new :features, 'Run the features' do |task|
-  task.profile = 'default'
-end
-
+task :spec
 RSpec::Core::RakeTask.new :spec do |spec|
   spec.ruby_opts = '-I lib:spec'
   spec.pattern = 'spec/lib/*_spec.rb'
 end
-task :spec
 
 desc 'Run integration examples'
 task :integration
