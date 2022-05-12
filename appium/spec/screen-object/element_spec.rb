@@ -2,9 +2,8 @@ require_relative '../spec_helper'
 
 describe "Interface" do
 
-   locator = "name~dummy"
    let(:selenium_driver) {double('')}
-   let(:element) {ScreenObject::AppElements::Element.new(locator)}
+   let(:element) {ScreenObject::AppElements::Element.new(name: 'dummy')}
 
   context "interaction with click method" do
     it "should click on element" do

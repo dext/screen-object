@@ -18,7 +18,17 @@ module ScreenObject
       attr_reader :locator
 
       def initialize(locator)
-        @locator = locator.split '~'
+        case locator
+        when String
+          warn "#{DateTime.now.strftime '%F %T'} WARN ScreenObject Element [DEPRECATION] Passing the locator as a single string
+                with locator type and value separated by ~ is deprecated and will no longer work in version 1.0.6.
+                Use a hash instead (ex: button(:login, id: 'button_id') lib/screen-object/accessors/element.rb:#{__LINE__}"
+          @locator = locator.split '~'
+        when Hash
+          @locator = locator.first
+        else
+          raise "Invalid locator type: #{locator.class}"
+        end
       end
 
       def driver
