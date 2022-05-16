@@ -1,94 +1,87 @@
-** Capital One built this project to help our engineers as well as users in the community. We are no longer able to fully support the project. We have archived the project as of Jul 9 2019 where it will be available in a read-only state. Feel free to fork the project and maintain your own version. **
+# screen-object
 
+screen-object is a ruby gem. It is a wrapper on top of Appium. 
+This gem helps create screen objects for automating ios and android mobile apps. 
+screen-object methods interact with the elements on the screen. 
 
---------------------
+### Software Requirements
 
-# screen-object 
-screen-object is a ruby gem. It is a wrapper on top of Appium. This gem helps create screen objects for automating ios and android mobile apps. screen-object methods interact with the elements on the screen. 
-
-### Software Requirements 
 This gem is tested on Ruby 2.1.3, Ruby 2.1.5 and Ruby 2.3.0
 
 ### Gem Dependencies
-Other gems used by screen-object 
 
-1. rake
-2. require_all
-3. rspec
-4. cucumber
-5. appium_lib
-6. page_navigation
-7. childprocess
+Other gems used by screen-object:
+- rake 
+- require_all 
+- rspec 
+- appium_lib 
+- page_navigation 
+- childprocess
 
 ### Setup Instructions
 
 Add the gem to gemfile
   
-````ruby
+```shell
 gem 'screen-object'
-````
+```
 
 Add the gem to supporting file
 
-````ruby
+```
 require 'screen-object'
-````
+```
  
 Include screen-object module to the class
- 
- ````ruby
+
+```
 include ScreenObject
-````
+```
 
-After including this screen-object module, numerous methods will be added in to your class that allow you to define your screen. For the login page you might design your test in following way:
+After including this screen-object module, numerous methods will be added in to your class that allow you to define your screen.
+For the login page you might design your test in following way:
 
-Calling the text_field and button methods. To login, we could simply write the following code:
+Calling the `text_field` and `button` methods. To login, we could simply write the following code:
 
-
-````ruby
+```ruby
 class LoginScreen
+  include ScreenObject
+  # This will add several methods to our page object that allow us to interact with the items on the screen.
 
-    include screen-object
-    # This will add several methods to our page object that allow us to interact with the items on the screen.
+  text_field :username, name: 'username'
+  text_field :password, name: 'password'
+  button :login, name: 'login'
 
-        text_field(:username, "name~username”)
-        text_field(:password, "name~password”)
-        button(:login, "name~login”)
+  def enter_username(username)
+    self.username = username
+  end
 
-        def enter_username(username)
-            self.username = username
-        end
+  def enter_password(password)
+    self.password = password
+  end
 
-        def enter_password(password)
-            self. password = password
-        end
+  def click_login_button
+    login
+  end
+end
+```
 
-        def click_login_button
-            login
-        end
+Now, you can call those methods into actual spec file:
 
+```rspec
+describe 'Client' do
+    it 'logs into their account' do
+      on(LoginScreen).enter_username('test_user')
+      on(LoginScreen).enter_password('secret')
+      on(LoginScreen).click_login_button
     end
-````
+end
+```
 
-Now , you can call those methods into actual step_definition file
+## License
 
-````ruby
-    on(LoginScreen).enter_username(“testuser”)
-    on(LoginScreen).enter_password(“secrect”)
-    on(LoginScreen).click_login_button
-````
+Apache License Version 2.0
 
-### RoadMap
-1. Add collection methods
-2. Wiki documentation page
-3. Add device specific methods to the accessors
-4. Make the gem tool agnostic and support other tools based on demand
-
-### Contributors:
-We welcome your interest in Capital One’s Open Source Projects (the “Project”). Any Contributor to the project must accept and sign a CLA indicating agreement to the license terms. Except for the license granted in this CLA to Capital One and to recipients of software distributed by Capital One, you reserve all right, title, and interest in and to your contributions; this CLA does not impact your rights to use your own contributions for any other purpose.
-
-Link to [CLA] (https://docs.google.com/forms/d/19LpBBjykHPox18vrZvBbZUcK6gQTj7qv1O5hCduAZFU/viewform)
-
-This project adheres to the [Open Source Code of Conduct] (http://www.capitalone.io/codeofconduct/). By participating, you are expected to honor this code.
+See [LICENSE](LICENSE) to see the full text.
  
 
