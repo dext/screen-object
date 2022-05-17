@@ -53,7 +53,7 @@ module ScreenObject
       populate_select_list(receiver, key, value) if is_select_list?(receiver, key)
       populate_text(receiver, key, value) if is_text?(receiver, key) and is_enabled?(receiver, key)
     end
-    
+
     def populate_text(receiver, key, value)
       receiver.send "#{key}=", value
     end
