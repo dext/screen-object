@@ -1,4 +1,0 @@
-default: --no-source --color --format pretty features=default --tags not @not_ready
-
-android: features
-ios: features
