@@ -1,8 +1,6 @@
 require 'page_navigation'
 
 module ScreenObject
-
-  #
   # Module to facilitate to creating of screen objects in step definitions.  You
   # can make the methods below available to all of your step definitions by adding
   # this module to World.
@@ -26,9 +24,7 @@ module ScreenObject
   #     :another_route => [[ScreenOne,:method1, "arg1"], [ScreenTwoB,:method2b], [ScreenThree,:method3]]
   #   }
   #
-  # Notice the first entry of :another_route is passing an argument
-  # to the method.
-  #
+  # Notice the first entry of :another_route is passing an argument to the method.
 
   module ScreenFactory
     include PageNavigation
@@ -38,6 +34,5 @@ module ScreenObject
       blk.call @current_screen if blk
       @current_screen
     end
-
   end
 end
