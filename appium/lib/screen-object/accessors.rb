@@ -9,11 +9,10 @@
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and limitations under the License. 
+# See the License for the specific language governing permissions and limitations under the License.
 # ***********************************************************************************************************
 
 module ScreenObject
-
   # contains  module level methods that are added into your screen objects.
   # when you include the ScreenObject module.  These methods will be generated as services for screens.
 
@@ -21,10 +20,8 @@ module ScreenObject
   # include require 'screen-object' into environment file. doing this , it will load screen object methods for usage..
 
   module Accessors
-
     # Button class generates all the methods related to different operations that can be performed on the button.
     def button(name, locator)
-
       # generates method for clicking button.
       # this method will not return any value.
       # @example click on 'Submit' button.
@@ -205,7 +202,6 @@ module ScreenObject
 
     # Checkbox class generates all the methods related to different operations that can be performed on the check box on the screen.
     def checkbox(name, locator)
-
       # generates method for checking the checkbox object.
       # this will not return any value
       # @example check if 'remember me' checkbox is not checked.
@@ -266,8 +262,7 @@ module ScreenObject
     end
 
     # Text class generates all the methods related to different operations that can be performed on the text object on the screen.
-    def text(name,locator)
-
+    def text(name, locator)
       # generates method for clicking button.
       # this method will not return any value.
       # @example click on 'Submit' button.
@@ -372,8 +367,7 @@ module ScreenObject
     end
 
     # text_field class generates all the methods related to different operations that can be performed on the text_field object on the screen.
-    def text_field(name,locator)
-
+    def text_field(name, locator)
       # generates method for setting text into text field.
       # There is no return value for this method.
       # @example setting username field.
@@ -462,8 +456,7 @@ module ScreenObject
     end
 
     # Image class generates all the methods related to different operations that can be performed on the image object on the screen.
-    def image(name,locator)
-
+    def image(name, locator)
       # generates method for checking the existence of the image.
       # this will return true or false based on if image is available or not
       # @example check if 'logo' image is displayed on the page
@@ -534,6 +527,5 @@ module ScreenObject
         ScreenObject::AppElements::Element.new(locator)
       end
     end
-
   end
 end
