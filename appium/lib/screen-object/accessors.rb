@@ -29,7 +29,7 @@ module ScreenObject
       # def click_login_button
       #  login_button # This will click on the button.
       # end
-      define_method(name) do
+      define_method name do
         ScreenObject::AppElements::Button.new(locator).tap
       end
 
@@ -41,7 +41,7 @@ module ScreenObject
       # def check_login_button
       #  login_button?  # This will return true or false based on existence of button.
       # end
-      define_method("#{name}?") do
+      define_method "#{name}?" do
         ScreenObject::AppElements::Button.new(locator).exists?
       end
 
@@ -53,7 +53,7 @@ module ScreenObject
       # def enable_login_button
       # login_button_enabled? # This will return true or false if button is enabled or disabled.
       # end
-      define_method("#{name}_enabled?") do
+      define_method "#{name}_enabled?" do
         ScreenObject::AppElements::Button.new(locator).enabled?
       end
 
@@ -65,7 +65,7 @@ module ScreenObject
       # def value_login_button
       #  login_button_value  # This will return the text of the value attribute of the 'Submit' button object.
       # end
-      define_method("#{name}_value") do
+      define_method "#{name}_value" do
         ScreenObject::AppElements::Button.new(locator).value
       end
 
@@ -78,7 +78,7 @@ module ScreenObject
       #  login_button_scroll # This will not return any value. It will scroll on the screen until object found and click
       #                        on the object i.e. button. This is iOS specific method and should not be used for android application
       # end
-      define_method("#{name}_scroll") do
+      define_method "#{name}_scroll" do
         # direction = options[:direction] || 'down'
         ScreenObject::AppElements::Button.new(locator).scroll_for_element_click
       end
@@ -98,7 +98,7 @@ module ScreenObject
       #                                          the object i.e. button. This is iOS specific method and should not be used
       #                                          for android application.
       # end
-      define_method("#{name}_scroll_dynamic") do |text|
+      define_method "#{name}_scroll_dynamic" do |text|
         # direction = options[:direction] || 'down'
         ScreenObject::AppElements::Button.new(locator).scroll_for_dynamic_element_click(text)
       end
@@ -118,7 +118,7 @@ module ScreenObject
       #                                 for iOS application. This method matches with containing text for the
       #                                 button on the screen and click on it.
       # end
-      define_method("#{name}_scroll_") do |text|
+      define_method "#{name}_scroll_" do |text|
         ScreenObject::AppElements::Button.new(locator).click_text(text)
       end
 
@@ -140,7 +140,7 @@ module ScreenObject
       #                                        This method matches with containing text for the button on the screen and click on it.
       #
       # end
-      define_method("#{name}_scroll_dynamic_") do |text|
+      define_method "#{name}_scroll_dynamic_" do |text|
         ScreenObject::AppElements::Button.new(locator).click_dynamic_text(text)
       end
 
@@ -159,7 +159,7 @@ module ScreenObject
       #                                            This method matches with exact text for the button on the screen and click on it.
       #
       # end
-      define_method("#{name}_scroll_exact_") do |text|
+      define_method "#{name}_scroll_exact_" do |text|
         ScreenObject::AppElements::Button.new(locator).click_exact_text(text)
       end
 
@@ -180,7 +180,7 @@ module ScreenObject
       #                                             text for the button on the screen and click on it.
       #
       # end
-      define_method("#{name}_scroll_dynamic_exact_") do |text|
+      define_method "#{name}_scroll_dynamic_exact_" do |text|
         ScreenObject::AppElements::Button.new(locator).click_dynamic_exact_text(text)
       end
 
@@ -195,8 +195,8 @@ module ScreenObject
       #                  which can use all the inherited methods of ScreenObject::AppElements::Element
       #                  like: .click, .value, .element etc. which are needed in certain cases
       # end
-      define_method("#{name}_element") do
-        ScreenObject::AppElements::Button.new(locator)
+      define_method "#{name}_element" do
+        ScreenObject::AppElements::Button.new locator
       end
     end
 
@@ -210,7 +210,7 @@ module ScreenObject
       # def check_remember_me_checkbox
       #   check_remember_me # This method will check the check box.
       # end
-      define_method("check_#{name}") do
+      define_method "check_#{name}" do
         ScreenObject::AppElements::CheckBox.new(locator).check
       end
 
@@ -221,7 +221,7 @@ module ScreenObject
       # def uncheck_remember_me_check_box
       #   uncheck_remember_me # This method will uncheck the check box if it's checked.
       # end
-      define_method("uncheck_#{name}") do
+      define_method "uncheck_#{name}" do
         ScreenObject::AppElements::CheckBox.new(locator).uncheck
       end
 
@@ -231,7 +231,7 @@ module ScreenObject
       # def exist_remember_me_check_box
       #   remember_me? # This method is used to return true or false based on 'remember me' check box exist.
       # end
-      define_method("#{name}?") do
+      define_method "#{name}?" do
         ScreenObject::AppElements::CheckBox.new(locator).exists?
       end
 
@@ -241,7 +241,7 @@ module ScreenObject
       # def exist_remember_me_check_box
       #   remember_me? # This method is used to return true or false based on 'remember me' check box exist.
       # end
-      define_method("#{name}_checked?") do
+      define_method "#{name}_checked?" do
         ScreenObject::AppElements::CheckBox.new(locator).checked?
       end
 
@@ -256,8 +256,8 @@ module ScreenObject
       #                  which can use all the inherited methods of ScreenObject::AppElements::Element
       #                  like: .click, .value, .element etc. which are needed in certain cases
       # end
-      define_method("#{name}_element") do
-        ScreenObject::AppElements::CheckBox.new(locator)
+      define_method "#{name}_element" do
+        ScreenObject::AppElements::CheckBox.new locator
       end
     end
 
@@ -270,7 +270,7 @@ module ScreenObject
       # def click_login_button
       #  login_button # This will click on the button.
       # end
-      define_method(name) do
+      define_method name do
         ScreenObject::AppElements::Text.new(locator).tap
       end
 
@@ -282,7 +282,7 @@ module ScreenObject
       # def verify_welcome_text
       #   welcome_text? # This will check if object exists and return true..
       # end
-      define_method("#{name}?") do
+      define_method "#{name}?" do
         ScreenObject::AppElements::Text.new(locator).exists?
       end
 
@@ -294,7 +294,7 @@ module ScreenObject
       # def click_welcome_text
       #   welcome_text # This will click on the Welcome text on the screen.
       # end
-      define_method("#{name}") do
+      define_method "#{name}" do
         ScreenObject::AppElements::Text.new(locator).click
       end
 
@@ -306,7 +306,7 @@ module ScreenObject
       # def get_welcome_text
       #   welcome_text_text # This will return text of value of attribute 'text'.
       # end
-      define_method("#{name}_text") do
+      define_method "#{name}_text" do
         ScreenObject::AppElements::Text.new(locator).text
       end
 
@@ -321,7 +321,7 @@ module ScreenObject
       # def dynamic_welcome_guest(Welcome_<guest_name>)
       # welcome_text_dynamic?(welcome_<guest_name>)  # This will return true or false based welcome text exists on the screen.
       # end
-      define_method("#{name}_dynamic?") do |text|
+      define_method "#{name}_dynamic?" do |text|
         ScreenObject::AppElements::Text.new(locator).dynamic_text_exists?(text)
       end
 
@@ -333,7 +333,7 @@ module ScreenObject
       # def get_welcome_text
       #   welcome_text_value # This will return text of value of attribute 'text'.
       # end
-      define_method("#{name}_value") do
+      define_method "#{name}_value" do
         ScreenObject::AppElements::Text.new(locator).value
       end
 
@@ -348,7 +348,7 @@ module ScreenObject
       # def dynamic_welcome_guest(Welcome_<guest_name>)
       # welcome_text_dynamic?(welcome_<guest_name>)  # This will return true or false based welcome text exists on the screen.
       # end
-      define_method("#{name}_dynamic_text") do |text|
+      define_method "#{name}_dynamic_text" do |text|
         ScreenObject::AppElements::Text.new(locator).dynamic_text(text)
       end
 
@@ -363,8 +363,8 @@ module ScreenObject
       #                  which can use all the inherited methods of ScreenObject::AppElements::Element
       #                  like: .click, .value, .element etc. which are needed in certain cases
       # end
-      define_method("#{name}_element") do
-        ScreenObject::AppElements::Text.new(locator)
+      define_method "#{name}_element" do
+        ScreenObject::AppElements::Text.new locator
       end
     end
 
@@ -377,8 +377,8 @@ module ScreenObject
       # def set_username_text_field(username)
       #   self.username=username   # This method will enter text into username text field.
       # end
-      define_method("#{name}=") do |text|
-        ScreenObject::AppElements::TextField.new(locator).text=(text)
+      define_method "#{name}=" do |text|
+        ScreenObject::AppElements::TextField.new(locator).text = (text)
       end
 
       # generates method for comparing expected and actual text.
@@ -389,7 +389,7 @@ module ScreenObject
       # def get_welcome_text
       #   username_text # This will return text containing in text field attribute.
       # end
-      define_method("#{name}") do
+      define_method "#{name}" do
         ScreenObject::AppElements::TextField.new(locator).text
       end
 
@@ -401,7 +401,7 @@ module ScreenObject
       # def clear_text
       #   clear_username # This will clear the pre populated user name text field.
       # end
-      define_method("clear_#{name}") do
+      define_method "clear_#{name}" do
         ScreenObject::AppElements::TextField.new(locator).clear
       end
 
@@ -413,7 +413,7 @@ module ScreenObject
       # def exists_username
       #   username? # This will return if object exists on the screen.
       # end
-      define_method("#{name}?") do
+      define_method "#{name}?" do
         ScreenObject::AppElements::TextField.new(locator).exists?
       end
 
@@ -425,7 +425,7 @@ module ScreenObject
       # def get_username_text
       #   username_value # This will return text of value of attribute 'text'.
       # end
-      define_method("#{name}_value") do
+      define_method "#{name}_value" do
         ScreenObject::AppElements::TextField.new(locator).value
       end
 
@@ -437,7 +437,7 @@ module ScreenObject
       # def enable_login_button
       # login_button_enabled? # This will return true or false if button is enabled or disabled.
       # end
-      define_method("#{name}_enabled?") do
+      define_method "#{name}_enabled?" do
         ScreenObject::AppElements::TextField.new(locator).enabled?
       end
 
@@ -452,8 +452,8 @@ module ScreenObject
       #                  which can use all the inherited methods of ScreenObject::AppElements::Element
       #                  like: .click, .value, .element etc. which are needed in certain cases
       # end
-      define_method("#{name}_element") do
-        ScreenObject::AppElements::TextField.new(locator)
+      define_method "#{name}_element" do
+        ScreenObject::AppElements::TextField.new locator
       end
     end
 
@@ -467,7 +467,7 @@ module ScreenObject
       # def click_logo
       #  logo # This will click on the logo text on the screen.
       # end
-      define_method("#{name}?") do
+      define_method "#{name}?" do
         ScreenObject::AppElements::Image.new(locator).exists?
       end
 
@@ -479,7 +479,7 @@ module ScreenObject
       # def click_logo
       #  logo # This will click on the logo text on the screen.
       # end
-      define_method("#{name}") do
+      define_method "#{name}" do
         ScreenObject::AppElements::Image.new(locator).click
       end
 
@@ -494,15 +494,15 @@ module ScreenObject
       #                  which can use all the inherited methods of ScreenObject::AppElements::Element
       #                  like: .click, .value, .element etc. which are needed in certain cases
       # end
-      define_method("#{name}_element") do
-        ScreenObject::AppElements::Image.new(locator)
+      define_method "#{name}_element" do
+        ScreenObject::AppElements::Image.new locator
       end
     end
 
     # table class generates all the methods related to different operations that can be performed on the table object on the screen.
     def table(name, locator)
       # generates method for counting total no of cells in table
-      define_method("#{name}_cell_count") do
+      define_method "#{name}_cell_count" do
         ScreenObject::AppElements::Table.new(locator).cell_count
       end
 
@@ -517,16 +517,16 @@ module ScreenObject
       #                  which can use all the inherited methods of ScreenObject::AppElements::Element
       #                  like: .click, .value, .element etc. which are needed in certain cases
       # end
-      define_method("#{name}_element") do
-        ScreenObject::AppElements::Table.new(locator)
+      define_method "#{name}_element" do
+        ScreenObject::AppElements::Table.new locator
       end
     end
 
     # elements class generates all the methods related to general elements operation
     def element(name, locator)
       # generates method for elements object
-      define_method("#{name}") do
-        ScreenObject::AppElements::Element.new(locator)
+      define_method "#{name}" do
+        ScreenObject::AppElements::Element.new locator
       end
     end
   end
