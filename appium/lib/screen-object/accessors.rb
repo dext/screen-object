@@ -314,7 +314,8 @@ module ScreenObject
       # this will return true or false based on object is displayed or not.
       # @example check if 'Welcome' text is displayed on the page
       # @param [text] is the actual text of the button containing.
-      # suppose 'Welcome guest' text appears on the screen for non logged in user and it changes when user logged in on the screen and appears as 'Welcome <guest_name>'. this would be treated as dynamic text since it would be changing based on guest name.
+      # suppose 'Welcome guest' text appears on the screen for non logged in user and it changes when user logged in on the screen and appears as 'Welcome <guest_name>'.
+      # this would be treated as dynamic text since it would be changing based on guest name.
       # DSL to check if the text that is sent as argument exists on the screen. Returns true or false
       # text(:welcome_guest,"xpath~//UITextField")
       # def dynamic_welcome_guest(Welcome_<guest_name>)
@@ -340,7 +341,8 @@ module ScreenObject
       # this will return actual test for an object.
       # @example check if 'Welcome' text is displayed on the page
       # @param [text] is the actual text of the button containing.
-      # suppose 'Welcome guest' text appears on the screen for non logged in user and it changes when user logged in on the screen and appears as 'Welcome <guest_name>'. this would be treated as dynamic text since it would be changing based on guest name.
+      # suppose 'Welcome guest' text appears on the screen for non logged in user and it changes when user logged in on the screen and appears as 'Welcome <guest_name>'.
+      # this would be treated as dynamic text since it would be changing based on guest name.
       # DSL to check if the text that is sent as argument exists on the screen. Returns true or false
       # text(:welcome_guest,"xpath~//UITextField")
       # def dynamic_welcome_guest(Welcome_<guest_name>)
