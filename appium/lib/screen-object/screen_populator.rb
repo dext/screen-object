@@ -1,8 +1,5 @@
 module ScreenObject
-
   module ScreenPopulator
-
-    #
     # This method will populate all matched page TextFields,
     # TextAreas, SelectLists, FileFields, Checkboxes, and Radio Buttons from the
     # Hash passed as an argument.  The way it find an element is by
@@ -41,6 +38,7 @@ module ScreenObject
 
     def populate_section(section, data)
       return unless self.respond_to? section
+
       data.to_h.each do |key, value|
         populate_value(self.send(section), key, value)
       end
@@ -60,6 +58,7 @@ module ScreenObject
 
     def populate_checkbox(receiver, key, value)
       return receiver.send "check_#{key}" if value
+
       receiver.send "uncheck_#{key}"
     end
 
@@ -77,6 +76,7 @@ module ScreenObject
 
     def is_text?(receiver, key)
       return false if is_select_list?(receiver, key)
+
       receiver.respond_to?("#{key}=".to_sym)
     end
 
@@ -99,6 +99,7 @@ module ScreenObject
     def is_enabled?(receiver, key)
       return false if is_radiobuttongroup?(receiver, key)
       return true if (receiver.send "#{key}_element").tag_name == "textarea"
+
       element = receiver.send("#{key}_element")
       element.enabled? and element.present?
     end
