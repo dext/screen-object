@@ -45,11 +45,11 @@ module ScreenObject
     end
 
     def populate_value(receiver, key, value)
-      populate_checkbox receiver, key, value if is_checkbox? receiver, key and is_enabled? receiver, key
+      populate_checkbox receiver, key, value if is_checkbox?(receiver, key) && is_enabled?(receiver, key)
       populate_radiobuttongroup receiver, key, value if is_radiobuttongroup? receiver, key
-      populate_radiobutton receiver, key, value if is_radiobutton? receiver, key and is_enabled? receiver, key
+      populate_radiobutton receiver, key, value if is_radiobutton?(receiver, key) && is_enabled?(receiver, key)
       populate_select_list receiver, key, value if is_select_list? receiver, key
-      populate_text receiver, key, value if is_text? receiver, key and is_enabled? receiver, key
+      populate_text receiver, key, value if is_text?(receiver, key) && is_enabled?(receiver, key)
     end
 
     def populate_text(receiver, key, value)
@@ -98,7 +98,7 @@ module ScreenObject
 
     def is_enabled?(receiver, key)
       return false if is_radiobuttongroup? receiver, key
-      return true if (receiver.send "#{key}_element").tag_name == "textarea"
+      return true if (receiver.send "#{key}_element").tag_name == 'textarea'
 
       element = receiver.send "#{key}_element"
       element.enabled? and element.present?
