@@ -5,7 +5,7 @@ AllCops:
   NewCops: enable
 
 Layout/DotPosition: { EnforcedStyle: trailing }
-Layout/LineLength: { Max: 130 }
+Layout/LineLength: { Max: 180 }
 
 Metrics/AbcSize: { Enabled: false }
 Metrics/CyclomaticComplexity: { Enabled: false }

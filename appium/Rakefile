@@ -23,3 +23,8 @@ RSpec::Core::RakeTask.new :screen_object do |spec|
   spec.ruby_opts = '-I lib:spec'
   spec.pattern = 'spec/screen-object/*_spec.rb'
 end
+
+desc 'Executes all examples'
+task :all_examples do
+  exec 'bundle exec rspec spec/.'
+end
