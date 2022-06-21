@@ -15,7 +15,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.7.2'
   s.platform = Gem::Platform::RUBY
 
-  s.metadata['allowed_push_host'] = 'https://github.com/dext/screen-object'
   s.metadata['rubygems_mfa_required'] = 'true'
 
   s.license = 'MIT'
