@@ -2,11 +2,7 @@
 
 screen-object is a ruby gem. It is a wrapper on top of Appium. 
 This gem helps create screen objects for automating ios and android mobile apps. 
-screen-object methods interact with the elements on the screen. 
-
-### Software Requirements
-
-This gem is tested on Ruby 2.1.3, Ruby 2.1.5 and Ruby 2.3.0
+screen-object methods interact with the elements on the screen.
 
 ### Gem Dependencies
 
@@ -80,8 +76,6 @@ end
 
 ## License
 
-Apache License Version 2.0
-
-See [LICENSE](LICENSE) to see the full text.
+See [LICENSE](LICENSE) for details.
  
 
