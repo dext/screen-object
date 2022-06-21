@@ -1,6 +1,8 @@
 *.gem
 .DS_Store
 Gemfile.lock
+.ruby-version
 .idea
 pkg
-/appium/checksums/
+checksums
+
