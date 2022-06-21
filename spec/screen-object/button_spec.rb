@@ -6,7 +6,7 @@ describe 'Interface' do
     example 'should tap on the button' do
       allow(button).to receive(:element).and_return(selenium_object)
       allow(selenium_object).to receive(:click).and_return(true)
-      expect(button.tap).to be(true)
+      expect(button.tap).to be true
     end
   end
 
@@ -14,7 +14,7 @@ describe 'Interface' do
     example 'should check if button is enabled' do
       allow(button).to receive(:element).and_return(selenium_object)
       allow(selenium_object).to receive(:enabled?).and_return(true)
-      expect(button.enabled?).to be(true)
+      expect(button.enabled?).to be true
     end
   end
 end

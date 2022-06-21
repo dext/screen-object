@@ -22,7 +22,7 @@ describe 'Element' do
     example 'should return value' do
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:displayed?).and_return(true)
-      expect(element.exists?).to be(true)
+      expect(element.exists?).to be true
     end
   end
 
@@ -46,7 +46,7 @@ describe 'Element' do
     example 'should return element object' do
       allow(element).to receive(:dynamic_xpath).and_return(selenium_driver)
       allow(selenium_driver).to receive(:displayed?).and_return(true)
-      expect(element.dynamic_text_exists?('dynamic_text')).to be(true)
+      expect(element.dynamic_text_exists?('dynamic_text')).to be true
     end
   end
 
@@ -64,7 +64,7 @@ describe 'Element' do
       allow(selenium_driver).to receive(:displayed?).and_return(true)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.scroll_for_element_click).to be(true)
+      expect(element.scroll_for_element_click).to be true
     end
 
     example 'should scroll for element and click' do
@@ -73,7 +73,7 @@ describe 'Element' do
       allow(element).to receive(:scroll).and_return(selenium_driver)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.scroll_for_element_click).to be(true)
+      expect(element.scroll_for_element_click).to be true
     end
   end
 
@@ -83,7 +83,7 @@ describe 'Element' do
       allow(selenium_driver).to receive(:displayed?).and_return(true)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.scroll_for_dynamic_element_click('expected_text')).to be(true)
+      expect(element.scroll_for_dynamic_element_click('expected_text')).to be true
     end
 
     example 'should scroll for element and click..' do
@@ -92,7 +92,7 @@ describe 'Element' do
       allow(element).to receive(:scroll).and_return(selenium_driver)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.scroll_for_dynamic_element_click('expected_text')).to be(true)
+      expect(element.scroll_for_dynamic_element_click('expected_text')).to be true
     end
   end
 
@@ -100,7 +100,7 @@ describe 'Element' do
     example 'should click on object if it does exists on the first page' do
       allow(element).to receive(:exists?).and_return(true)
       allow(element).to receive(:click).and_return(true)
-      expect(element.click_text('text')).to be(true)
+      expect(element.click_text('text')).to be true
     end
 
     example 'should click on object if it does not exists on the first page' do
@@ -108,7 +108,7 @@ describe 'Element' do
       allow(element).to receive(:scroll_to_text).with('text').and_return(selenium_driver)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.click_text('text')).to be(true)
+      expect(element.click_text('text')).to be true
     end
   end
 
@@ -117,7 +117,7 @@ describe 'Element' do
       allow(element).to receive(:dynamic_text_exists?).with('text').and_return(true)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.click_dynamic_text('text')).to be(true)
+      expect(element.click_dynamic_text('text')).to be true
     end
 
     example 'should click on object if it does not exists on the first page' do
@@ -125,7 +125,7 @@ describe 'Element' do
       allow(element).to receive(:scroll_to_text).with('text').and_return(selenium_driver)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.click_dynamic_text('text')).to be(true)
+      expect(element.click_dynamic_text('text')).to be true
     end
   end
 
@@ -133,7 +133,7 @@ describe 'Element' do
     example 'should click on object if it does exists on the first page' do
       allow(element).to receive(:exists?).and_return(true)
       allow(element).to receive(:click).and_return(true)
-      expect(element.click_exact_text('text')).to be(true)
+      expect(element.click_exact_text('text')).to be true
     end
 
     example 'should click on object if it does not exists on the first page' do
@@ -141,7 +141,7 @@ describe 'Element' do
       allow(element).to receive(:scroll_to_exact_text).with('text').and_return(selenium_driver)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.click_exact_text('text')).to be(true)
+      expect(element.click_exact_text('text')).to be true
     end
   end
 
@@ -150,7 +150,7 @@ describe 'Element' do
       allow(element).to receive(:dynamic_text_exists?).with('text').and_return(true)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.click_dynamic_exact_text('text')).to be(true)
+      expect(element.click_dynamic_exact_text('text')).to be true
     end
 
     example 'should click on object if it does not exists on the first page' do
@@ -158,7 +158,7 @@ describe 'Element' do
       allow(element).to receive(:scroll_to_exact_text).with('text').and_return(selenium_driver)
       allow(element).to receive(:element).and_return(selenium_driver)
       allow(selenium_driver).to receive(:click).and_return(true)
-      expect(element.click_dynamic_exact_text('text')).to be(true)
+      expect(element.click_dynamic_exact_text('text')).to be true
     end
   end
 end

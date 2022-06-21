@@ -6,7 +6,7 @@ describe 'Interface' do
     example 'should return true if checked?' do
       allow(check_box).to receive(:element).and_return(selenium_object)
       allow(selenium_object).to receive(:attribute).with('checked').and_return('true')
-      expect(check_box.checked?).to be(true)
+      expect(check_box.checked?).to be true
     end
   end
 
@@ -15,7 +15,7 @@ describe 'Interface' do
       allow(check_box).to receive(:element).and_return(selenium_object)
       allow(selenium_object).to receive(:click).and_return(true)
       allow(check_box).to receive(:checked?).and_return(false)
-      expect(check_box.check).to be(true)
+      expect(check_box.check).to be true
     end
   end
 
@@ -24,7 +24,7 @@ describe 'Interface' do
       allow(check_box).to receive(:element).and_return(selenium_object)
       allow(selenium_object).to receive(:click).and_return(true)
       allow(check_box).to receive(:checked?).and_return(true)
-      expect(check_box.uncheck).to be(true)
+      expect(check_box.uncheck).to be true
     end
   end
 end
