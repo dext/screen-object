@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.license = 'MIT'
 
-  s.files = `git ls-files`.split "\n"
+  s.files = Dir['lib/**/*.rb']
   s.executables = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths = ['lib']
 
