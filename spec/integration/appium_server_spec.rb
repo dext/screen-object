@@ -1,8 +1,6 @@
-require 'spec_helper'
 require 'screen-object/appium_server'
 
 describe ScreenObject::AppiumServer do
-
 
   let(:the_server) { ScreenObject::AppiumServer.new }
 
