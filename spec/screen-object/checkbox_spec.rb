@@ -1,33 +1,30 @@
-require_relative '../spec_helper'
-
 describe 'Interface' do
-
   let(:selenium_object) { double('') }
-  let(:check_box) {ScreenObject::AppElements::CheckBox.new(name: 'dummy')}
+  let(:check_box) { ScreenObject::AppElements::CheckBox.new(name: 'dummy') }
 
-  context 'interaction with checked method' do
-    it 'should retun true if checked?' do
-      expect(check_box).to receive(:element).and_return(selenium_object)
-      expect(selenium_object).to receive(:attribute).with('checked').and_return('true')
-      expect(check_box.checked?).to eq(true)
+  context 'when interaction with checked method' do
+    example 'should return true if checked?' do
+      allow(check_box).to receive(:element).and_return(selenium_object)
+      allow(selenium_object).to receive(:attribute).with('checked').and_return('true')
+      expect(check_box.checked?).to be(true)
     end
   end
 
-  context 'interaction with check method' do
-    it 'should check the element' do
-      expect(check_box).to receive(:element).and_return(selenium_object)
-      expect(selenium_object).to receive(:click).and_return(true)
-      expect(check_box).to receive(:checked?).and_return(false)
-      expect(check_box.check).to eq(true)
+  context 'when interaction with check method' do
+    example 'should check the element' do
+      allow(check_box).to receive(:element).and_return(selenium_object)
+      allow(selenium_object).to receive(:click).and_return(true)
+      allow(check_box).to receive(:checked?).and_return(false)
+      expect(check_box.check).to be(true)
     end
   end
 
-  context 'interaction with uncheck method' do
-    it 'should uncheck the element' do
-      expect(check_box).to receive(:element).and_return(selenium_object)
-      expect(selenium_object).to receive(:click).and_return(true)
-      expect(check_box).to receive(:checked?).and_return(true)
-      expect(check_box.uncheck).to eq(true)
+  context 'when interaction with uncheck method' do
+    example 'should uncheck the element' do
+      allow(check_box).to receive(:element).and_return(selenium_object)
+      allow(selenium_object).to receive(:click).and_return(true)
+      allow(check_box).to receive(:checked?).and_return(true)
+      expect(check_box.uncheck).to be(true)
     end
   end
 end
