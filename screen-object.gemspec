@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.metadata['allowed_push_host'] = 'https://github.com/dext/screen-object'
   s.metadata['rubygems_mfa_required'] = 'true'
 
-  s.license = 'APACHE 2.0'
+  s.license = 'MIT'
 
   s.files = `git ls-files`.split "\n"
   s.executables = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
