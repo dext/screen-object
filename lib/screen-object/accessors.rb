@@ -355,7 +355,7 @@ module ScreenObject
       # def get_welcome_text
       #   username_text # This will return text containing in text field attribute.
       # end
-      define_method "#{name}" do
+      define_method name do
         ScreenObject::AppElements::TextField.new(locator).text
       end
 
@@ -497,7 +497,7 @@ module ScreenObject
     # elements class generates all the methods related to general elements operation
     def element(name, locator)
       # generates method for elements object
-      define_method "#{name}" do
+      define_method name do
         ScreenObject::AppElements::Element.new locator
       end
     end
