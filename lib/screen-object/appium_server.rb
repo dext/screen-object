@@ -21,11 +21,9 @@ require 'childprocess'
 #
 module ScreenObject
   class AppiumServer
-
     attr_accessor :process
 
-
-    def initialize(params={})
+    def initialize(params = {})
       @params = params
     end
 
@@ -49,8 +47,8 @@ module ScreenObject
     def parameters
       cmd = ['appium']
       @params.each do |key, value|
-        cmd << '--'+key.to_s
-        cmd << value.to_s if not value.nil? and value.size > 0
+        cmd << "--#{key}"
+        cmd << value.to_s if !value.nil? && value.size.positive?
       end
       cmd
     end
