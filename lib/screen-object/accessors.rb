@@ -443,8 +443,8 @@ module ScreenObject
       # def click_logo
       #  logo # This will click on the logo text on the screen.
       # end
-      define_method "#{name}" do
-        ScreenObject::AppElements::Image.new(locator).click
+      define_method name do
+        ScreenObject::AppElements::Image.new(locator).tap
       end
 
       # returns the underlying ScreenObject element to allow

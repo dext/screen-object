@@ -1,9 +1,10 @@
 module ScreenObject
   module AppElements
     class Image < AppElements::Element
-      def click
+      def tap
         element.click
       end
+      alias click tap
     end
   end
 end
