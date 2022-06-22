@@ -242,12 +242,13 @@ module ScreenObject
 
     # Text class generates all the methods related to different operations that can be performed on the text object on the screen.
     def text(name, locator)
-      # generates method for clicking button.
-      # this method will not return any value.
-      # @example click on 'Submit' button.
-      # button(:login_button, xpath: '//UIButtonField')
-      # def click_login_button
-      #  login_button # This will click on the button.
+      # generates method for clicking on text object.
+      # this will NOT return any value.
+      # @example check if 'Welcome' text is displayed on the page
+      # text(:welcome_text, xpath: '//UITextField')
+      # DSL for clicking the Welcome text.
+      # def click_welcome_text
+      #   welcome_text # This will click on the Welcome text on the screen.
       # end
       define_method name do
         ScreenObject::AppElements::Text.new(locator).tap
@@ -263,18 +264,6 @@ module ScreenObject
       # end
       define_method "#{name}?" do
         ScreenObject::AppElements::Text.new(locator).exists?
-      end
-
-      # generates method for clicking on text object.
-      # this will NOT return any value.
-      # @example check if 'Welcome' text is displayed on the page
-      # text(:welcome_text, xpath: '//UITextField')
-      # DSL for clicking the Welcome text.
-      # def click_welcome_text
-      #   welcome_text # This will click on the Welcome text on the screen.
-      # end
-      define_method "#{name}" do
-        ScreenObject::AppElements::Text.new(locator).click
       end
 
       # generates method for retrieving text of the object.
