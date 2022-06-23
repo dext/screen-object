@@ -19,6 +19,10 @@ Metrics/ModuleLength: { Max: 400 }
 Metrics/ParameterLists: { CountKeywordArgs: false }
 Metrics/PerceivedComplexity: { Enabled: false }
 
+Naming/FileName:
+  Exclude:
+    - "lib/screen-object.rb"
+
 Style/Documentation: { Enabled: false }
 Style/GuardClause: { Enabled: false }
 Style/FrozenStringLiteralComment: { Enabled: false }

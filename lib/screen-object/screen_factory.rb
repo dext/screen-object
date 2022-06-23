@@ -31,7 +31,7 @@ module ScreenObject
 
     def on(screen_class, &blk)
       @current_screen = screen_class.new
-      blk.call @current_screen if blk
+      blk&.(@current_screen)
       @current_screen
     end
   end
