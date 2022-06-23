@@ -49,75 +49,55 @@ module ScreenObject
 
   def scroll_down_find(locator, locator_value, num_loop = 15)
     scr = driver.window_size
-    screen_height_start = scr.height * 0.5
-    scroll_start = screen_height_start.to_i
-    screen_height_end = scr.height * 0.2
-    scroll_end = screen_height_end.to_i
-    for i in 0..num_loop
-      begin
-        if driver.find_element(locator, locator_value).displayed?
-          break
-        end
-      rescue StandardError
-        driver.swipe start_x: 0, start_y: scroll_start, end_x: 0, end_y: scroll_end, touchCount: 2, duration: 0
-        false
-      end
+    scroll_start = scr.height * 0.5
+    scroll_end = scr.height * 0.2
+    num_loop.each do
+      break if driver.find_element(locator, locator_value).displayed?
+    rescue StandardError
+      driver.swipe start_x: 0, start_y: scroll_start, end_x: 0, end_y: scroll_end, touchCount: 2, duration: 0
+      false
     end
   end
 
   def scroll_down_click(locator, locator_value, num_loop = 15)
     scr = driver.window_size
-    screen_height_start = scr.height * 0.5
-    scroll_start = screen_height_start.to_i
-    screen_height_end = scr.height * 0.2
-    scroll_end = screen_height_end.to_i
-    for i in 0..num_loop
-      begin
-        if driver.find_element(locator, locator_value).displayed?
-          driver.find_element(locator, locator_value).click
-          break
-        end
-      rescue StandardError
-        driver.swipe start_x: 0, start_y: scroll_start, end_x: 0, end_y: scroll_end, touchCount: 2, duration: 0
-        false
+    scroll_start = scr.height * 0.5
+    scroll_end = scr.height * 0.2
+    num_loop.each do
+      if driver.find_element(locator, locator_value).displayed?
+        driver.find_element(locator, locator_value).click
+        break
       end
+    rescue StandardError
+      driver.swipe start_x: 0, start_y: scroll_start, end_x: 0, end_y: scroll_end, touchCount: 2, duration: 0
+      false
     end
   end
 
   def scroll_up_find(locator, locator_value, num_loop = 15)
     scr = driver.window_size
-    screen_height_start = scr.height * 0.5
-    scroll_start = screen_height_start.to_i
-    screen_height_end = scr.height * 0.2
-    scroll_end = screen_height_end.to_i
-    for i in 0..num_loop
-      begin
-        if driver.find_element(locator, locator_value).displayed?
-          break
-        end
-      rescue StandardError
-        driver.swipe start_x: 0, start_y: scroll_end, end_x: 0, end_y: scroll_start, touchCount: 2, duration: 0
-        false
-      end
+    scroll_start = scr.height * 0.5
+    scroll_end = scr.height * 0.2
+    num_loop.each do
+      break if driver.find_element(locator, locator_value).displayed?
+    rescue StandardError
+      driver.swipe start_x: 0, start_y: scroll_end, end_x: 0, end_y: scroll_start, touchCount: 2, duration: 0
+      false
     end
   end
 
   def scroll_up_click(locator, locator_value, num_loop = 15)
     scr = driver.window_size
-    screen_height_start = scr.height * 0.5
-    scroll_start = screen_height_start.to_i
-    screen_height_end = scr.height * 0.2
-    scroll_end = screen_height_end.to_i
-    for i in 0..num_loop
-      begin
-        if driver.find_element(locator, locator_value).displayed?
-          driver.find_element(locator, locator_value).click
-          break
-        end
-      rescue StandardError
-        driver.swipe start_x: 0, start_y: scroll_end, end_x: 0, end_y: scroll_start, touchCount: 2, duration: 0
-        false
+    scroll_start = scr.height * 0.5
+    scroll_end = scr.height * 0.2
+    num_loop.each do
+      if driver.find_element(locator, locator_value).displayed?
+        driver.find_element(locator, locator_value).click
+        break
       end
+    rescue StandardError
+      driver.swipe start_x: 0, start_y: scroll_end, end_x: 0, end_y: scroll_start, touchCount: 2, duration: 0
+      false
     end
   end
 
