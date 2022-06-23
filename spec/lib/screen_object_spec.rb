@@ -8,7 +8,7 @@ describe ScreenObject do
   let(:the_screen) { TestScreen.new }
 
   context 'when waiting for something to happen' do
-    let(:wait) { double('wait') }
+    let(:wait) { instance_double(Selenium::WebDriver::Wait) }
 
     before do
       allow(wait).to receive(:until)
