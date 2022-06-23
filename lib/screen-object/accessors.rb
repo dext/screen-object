@@ -1,17 +1,3 @@
-# ***********************************************************************************************************
-# SPDX-Copyright: Copyright (c) Capital One Services, LLC
-# SPDX-License-Identifier: Apache-2.0
-# Copyright 2016 Capital One Services, LLC
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#     http://www.apache.org/licenses/LICENSE-2.0
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and limitations under the License.
-# ***********************************************************************************************************
-
 module ScreenObject
   # contains  module level methods that are added into your screen objects.
   # when you include the ScreenObject module.  These methods will be generated as services for screens.
@@ -256,12 +242,13 @@ module ScreenObject
 
     # Text class generates all the methods related to different operations that can be performed on the text object on the screen.
     def text(name, locator)
-      # generates method for clicking button.
-      # this method will not return any value.
-      # @example click on 'Submit' button.
-      # button(:login_button, xpath: '//UIButtonField')
-      # def click_login_button
-      #  login_button # This will click on the button.
+      # generates method for clicking on text object.
+      # this will NOT return any value.
+      # @example check if 'Welcome' text is displayed on the page
+      # text(:welcome_text, xpath: '//UITextField')
+      # DSL for clicking the Welcome text.
+      # def click_welcome_text
+      #   welcome_text # This will click on the Welcome text on the screen.
       # end
       define_method name do
         ScreenObject::AppElements::Text.new(locator).tap
@@ -277,18 +264,6 @@ module ScreenObject
       # end
       define_method "#{name}?" do
         ScreenObject::AppElements::Text.new(locator).exists?
-      end
-
-      # generates method for clicking on text object.
-      # this will NOT return any value.
-      # @example check if 'Welcome' text is displayed on the page
-      # text(:welcome_text, xpath: '//UITextField')
-      # DSL for clicking the Welcome text.
-      # def click_welcome_text
-      #   welcome_text # This will click on the Welcome text on the screen.
-      # end
-      define_method "#{name}" do
-        ScreenObject::AppElements::Text.new(locator).click
       end
 
       # generates method for retrieving text of the object.
@@ -380,7 +355,7 @@ module ScreenObject
       # def get_welcome_text
       #   username_text # This will return text containing in text field attribute.
       # end
-      define_method "#{name}" do
+      define_method name do
         ScreenObject::AppElements::TextField.new(locator).text
       end
 
@@ -468,8 +443,8 @@ module ScreenObject
       # def click_logo
       #  logo # This will click on the logo text on the screen.
       # end
-      define_method "#{name}" do
-        ScreenObject::AppElements::Image.new(locator).click
+      define_method name do
+        ScreenObject::AppElements::Image.new(locator).tap
       end
 
       # returns the underlying ScreenObject element to allow
@@ -488,9 +463,21 @@ module ScreenObject
 
     # table class generates all the methods related to different operations that can be performed on the table object on the screen.
     def table(name, locator)
-      # generates method for counting total no of cells in table
-      define_method "#{name}_cell_count" do
-        ScreenObject::AppElements::Table.new(locator).cell_count
+      # generates method for checking the existence of the table.
+      # this method will return true or false based on object displayed or not.
+      # @example check if 'Item' table exists on the screen.
+      # table :item_table, xpath: '//XCUIElementTypeTable'
+      # DSL to check existence of item table
+      # def check_item_table
+      #  item_table? # This will return true or false based on existence of table.
+      # end
+      define_method "#{name}?" do
+        ScreenObject::AppElements::Table.new(locator).exists?
+      end
+
+      # generates method for counting total number of rows in table
+      define_method "#{name}_count_rows" do
+        ScreenObject::AppElements::Table.new(locator).count_rows
       end
 
       # returns the underlying ScreenObject element to allow
@@ -510,7 +497,7 @@ module ScreenObject
     # elements class generates all the methods related to general elements operation
     def element(name, locator)
       # generates method for elements object
-      define_method "#{name}" do
+      define_method name do
         ScreenObject::AppElements::Element.new locator
       end
     end
