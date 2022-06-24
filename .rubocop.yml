@@ -8,24 +8,20 @@ Layout/DotPosition: { EnforcedStyle: trailing }
 Layout/LineLength: { Max: 180 }
 
 Metrics/AbcSize: { Enabled: false }
+Metrics/CyclomaticComplexity: { Enabled: false }
 Metrics/BlockLength:
   Enabled: true
   Exclude:
     - "spec/**/*"
-Metrics/ClassLength: { Max: 400 }
-Metrics/CyclomaticComplexity: { Enabled: false }
-Metrics/ModuleLength: { Max: 400 }
 Metrics/MethodLength: { Max: 50 }
-Metrics/ParameterLists: { Max: 6 }
+Metrics/ClassLength: { Max: 400 }
+Metrics/ModuleLength: { Max: 400 }
+Metrics/ParameterLists: { CountKeywordArgs: false }
 Metrics/PerceivedComplexity: { Enabled: false }
 
-Naming/FileName:
-  Exclude:
-    - "lib/screen-object.rb"
-
 Style/Documentation: { Enabled: false }
-Style/FrozenStringLiteralComment: { Enabled: false }
 Style/GuardClause: { Enabled: false }
+Style/FrozenStringLiteralComment: { Enabled: false }
 Style/LambdaCall: { EnforcedStyle: braces }
 Style/MethodCallWithArgsParentheses:
   Enabled: true

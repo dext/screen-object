@@ -5,7 +5,7 @@ module ScreenObject
         element.text
       end
 
-      def tap
+      def click
         element.click
       end
 

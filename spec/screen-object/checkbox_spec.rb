@@ -1,4 +1,4 @@
-describe 'Checkbox' do
+describe 'Interface' do
   let(:selenium_object) { double('') }
   let(:check_box) { ScreenObject::AppElements::CheckBox.new(name: 'dummy') }
 

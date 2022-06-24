@@ -1,7 +1,7 @@
 require 'screen-object/appium_server'
 
 describe ScreenObject::AppiumServer do
-  let(:the_server) { described_class.new }
+  let(:the_server) { ScreenObject::AppiumServer.new }
 
   context 'when appium server is started' do
     example 'should start the appium server as a process' do

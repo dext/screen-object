@@ -1,4 +1,4 @@
-describe 'Image' do
+describe 'Interface' do
   let(:selenium_driver) { double('') }
   let(:image) { ScreenObject::AppElements::Image.new(name: 'dummy') }
 

@@ -1,4 +1,4 @@
-describe 'Button' do
+describe 'Interface' do
   let(:selenium_object) { double('') }
   let(:button) { ScreenObject::AppElements::Button.new(name: 'dummy') }
 
