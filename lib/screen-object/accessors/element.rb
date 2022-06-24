@@ -63,16 +63,16 @@ module ScreenObject
       end
 
       def scroll
-        driver.execute_script 'mobile: scrollTo', element: element.ref
-        # driver.execute_script("mobile: scroll",:direction => direction.downcase, :element => element.ref)
+        $driver.execute_script 'mobile: scrollTo', element: element.ref
+        # $driver.execute_script("mobile: scroll",:direction => direction.downcase, :element => element.ref)
       end
 
       def scroll_to_text(text)
-        driver.scroll_to text
+        $driver.scroll_to text
       end
 
       def scroll_to_exact_text(text)
-        driver.scroll_to_exact text
+        $driver.scroll_to_exact text
       end
 
       def scroll_for_element_click

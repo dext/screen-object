@@ -1,4 +1,4 @@
-describe 'Text field' do
+describe 'Interface' do
   let(:selenium_driver) { double('') }
   let(:text_field) { ScreenObject::AppElements::TextField.new(name: 'dummy') }
 
