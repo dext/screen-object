@@ -37,19 +37,19 @@ module ScreenObject
     private
 
     def populate_section(section, data)
-      return unless self.respond_to? section
+      return unless respond_to? section
 
       data.to_h.each do |key, value|
-        populate_value(self.send(section), key, value)
+        populate_value(send(section), key, value)
       end
     end
 
     def populate_value(receiver, key, value)
-      populate_checkbox receiver, key, value if is_checkbox?(receiver, key) && is_enabled?(receiver, key)
-      populate_radiobuttongroup receiver, key, value if is_radiobuttongroup? receiver, key
-      populate_radiobutton receiver, key, value if is_radiobutton?(receiver, key) && is_enabled?(receiver, key)
-      populate_select_list receiver, key, value if is_select_list? receiver, key
-      populate_text receiver, key, value if is_text?(receiver, key) && is_enabled?(receiver, key)
+      populate_checkbox receiver, key, value if checkbox?(receiver, key) && enabled?(receiver, key)
+      populate_radio_button_group receiver, key, value if radio_button_group? receiver, key
+      populate_radiobutton receiver, key, value if radio_button?(receiver, key) && enabled?(receiver, key)
+      populate_select_list receiver, key, value if select_list? receiver, key
+      populate_text receiver, key, value if text?(receiver, key) && enabled?(receiver, key)
     end
 
     def populate_text(receiver, key, value)
@@ -66,7 +66,7 @@ module ScreenObject
       receiver.send "select_#{key}" if value
     end
 
-    def populate_radiobuttongroup(receiver, key, value)
+    def populate_radio_button_group(receiver, key, value)
       receiver.send "select_#{key}", value
     end
 
@@ -74,30 +74,30 @@ module ScreenObject
       receiver.send "#{key}=", value
     end
 
-    def is_text?(receiver, key)
-      return false if is_select_list? receiver, key
+    def text?(receiver, key)
+      return false if select_list? receiver, key
 
       receiver.respond_to? "#{key}=".to_sym
     end
 
-    def is_checkbox?(receiver, key)
+    def checkbox?(receiver, key)
       receiver.respond_to? "check_#{key}".to_sym
     end
 
-    def is_radiobutton?(receiver, key)
+    def radio_button?(receiver, key)
       receiver.respond_to? "select_#{key}".to_sym
     end
 
-    def is_radiobuttongroup?(receiver, key)
+    def radio_button_group?(receiver, key)
       receiver.respond_to? "select_#{key}".to_sym and receiver.respond_to? "#{key}_values"
     end
 
-    def is_select_list?(receiver, key)
+    def select_list?(receiver, key)
       receiver.respond_to? "#{key}_options".to_sym
     end
 
-    def is_enabled?(receiver, key)
-      return false if is_radiobuttongroup? receiver, key
+    def enabled?(receiver, key)
+      return false if radio_button_group? receiver, key
       return true if (receiver.send "#{key}_element").tag_name == 'textarea'
 
       element = receiver.send "#{key}_element"
