@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake', '~> 13.0.6'
   s.add_development_dependency 'rspec', '~> 3.11.0', '>= 3.1.0'
   s.add_development_dependency 'rspec-expectations', '~> 3.11.0'
-  s.add_development_dependency 'rubocop', '~> 1.30.1'
+  s.add_development_dependency 'rubocop', '~> 1.31.1'
   s.add_development_dependency 'rubocop-faker', '~> 1.1.0'
-  s.add_development_dependency 'rubocop-rspec', '~> 2.11.1'
+  s.add_development_dependency 'rubocop-rspec', '~> 2.12.0'
 end
