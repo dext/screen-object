@@ -13,7 +13,7 @@
 
 Before submitting the PR make sure the following are checked:
 
-* [ ] Feature branch is up-to-date with `master` (if not - rebase it)
+* [ ] Feature branch is up-to-date with `main` (if not - rebase it)
 * [ ] I have performed a self-review of my own code
 * [ ] I have fixed all Rubocop errors in my own code
 * [ ] I have provided descriptive and properly named commits that will serve as documentation
