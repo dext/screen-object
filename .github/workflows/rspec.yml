@@ -9,9 +9,9 @@ name: Tests
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -34,5 +34,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby-version }}
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Run tests
+      - name: Run screen object examples
         run: bundle exec rake screen_object
+      - name: Run RSpec code examples
+        run: bundle exec rake spec
